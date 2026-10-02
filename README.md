@@ -29,3 +29,10 @@ The `ipaddress` module parses addresses and networks well but does not provide a
 
 - `sort_addresses(items)` — takes an iterable of strings or `ipaddress` objects, returns a list of parsed `ipaddress` objects sorted by `(version, start_int, prefix_len)`.
 - `SortableAddress` — a `typing.Union` alias for the four return types (`IPv4Address`, `IPv6Address`, `IPv4Network`, `IPv6Network`).
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
