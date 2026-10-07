@@ -1,6 +1,6 @@
 [project]
 name = "ip-address-sorter"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sort a mixed list of IPv4 and IPv6 addresses and ranges in proper numeric order using the ipaddress module."
 requires-python = ">=3.10"
 dependencies = []
